@@ -15,7 +15,6 @@ def hide_message_in_image(image_path, message, output_path):
 
     with open(output_path, 'wb') as img_out:
         img_out.write(img_data)
-
 def retrieve_message_from_image(image_path):
     "Retrieve a hidden message from the least significant bits of the image pixels."
     with open(image_path, 'rb') as img:
@@ -26,7 +25,7 @@ def retrieve_message_from_image(image_path):
     
     return message.split('\0')[0]  
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     action = input("Do you want to (1) hide a message or (2) retrieve a message? ")
     img_path = input("Enter the path of the image: ")
     
